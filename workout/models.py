@@ -26,6 +26,7 @@ class Workout(models.Model):
     date = models.DateField()
     calories_burned = models.IntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    duration = models.DurationField(null=True, blank=True)
 
     def __str__(self):
         return f"workout on {self.date} for {self.profile.firstname}"
@@ -38,11 +39,12 @@ class Exercise(models.Model):
         ('HARD', 'hard'),
     ]
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='exercises')
-    name = models.CharField(max_length=100)
+    activity_type = models.CharField(max_length=100)
     sets = models.PositiveIntegerField()
     reps = models.PositiveIntegerField()
     difficulty_level = models.CharField(max_length=6, choices=levels, null=True, blank=True)
     weight = models.FloatField(null=True, blank=True)  # in kilograms
+    distance = models.FloatField(null=True, blank=True)  # in kilometers
 
     def __str__(self):
-        return f"{self.name} in workout on {self.workout.date}"
+        return f"{self.activity_type} in workout on {self.workout.date}"
