@@ -23,7 +23,7 @@ class Profile(models.Model):
 
 class Workout(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='workouts')
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     calories_burned = models.IntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     duration = models.DurationField(null=True, blank=True)
