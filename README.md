@@ -15,7 +15,7 @@ A RESTful API for tracking workouts, exercises, and user profiles built with Dja
 
 ## Authentication
 
-All endpoints (except register and login) require authentication using Token-based authentication.
+All endpoints (except register and login) require authentication using basic authentication.
 
 ---
 
