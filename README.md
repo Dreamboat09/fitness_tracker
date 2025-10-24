@@ -17,11 +17,6 @@ A RESTful API for tracking workouts, exercises, and user profiles built with Dja
 
 All endpoints (except register and login) require authentication using Token-based authentication.
 
-### Include Token in Requests
-```bash
-Authorization: Token <your_token_here>
-```
-
 ---
 
 ## User Endpoints
@@ -64,11 +59,6 @@ Login and receive authentication token.
 
 Logout and invalidate token.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
-
 ---
 
 ## Profile Endpoints
@@ -78,10 +68,6 @@ Authorization: Token <your_token>
 
 Get list of all user profiles (admin only or filtered by permissions).
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -90,22 +76,12 @@ Authorization: Token <your_token>
 
 Get details of a specific profile.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
-
 ---
 
 ### 6. Update Profile
 **PUT/PATCH** `/api/profile/update/<id>/`
 
 Update user profile information.
-
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Request Body (PATCH - partial update):**
 ```json
@@ -122,10 +98,6 @@ Authorization: Token <your_token>
 
 Delete a user profile.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -136,10 +108,6 @@ Authorization: Token <your_token>
 
 Get list of all workouts for the authenticated user.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Query Parameters (optional):**
 - `workout_type` - Filter by type (cardio, strength, flexibility, sports)
@@ -159,10 +127,6 @@ Authorization: Token <your_token>
 
 Get details of a specific workout.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -171,10 +135,6 @@ Authorization: Token <your_token>
 
 Create a new workout entry.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Request Body:**
 ```json
@@ -195,10 +155,6 @@ Authorization: Token <your_token>
 
 Update an existing workout.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Request Body (PATCH - partial update):**
 ```json
@@ -215,10 +171,6 @@ Authorization: Token <your_token>
 
 Delete a workout entry.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -229,10 +181,6 @@ Authorization: Token <your_token>
 
 Get list of all exercises in workouts.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -241,10 +189,6 @@ Authorization: Token <your_token>
 
 Get details of a specific exercise.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
 
@@ -253,10 +197,6 @@ Authorization: Token <your_token>
 
 Add a new exercise to a workout.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Request Body:**
 ```json
@@ -277,10 +217,6 @@ Authorization: Token <your_token>
 
 Update an existing exercise.
 
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 **Request Body (PATCH):**
 ```json
@@ -296,10 +232,5 @@ Authorization: Token <your_token>
 **DELETE** `/api/exercise/delete/<id>/`
 
 Delete an exercise from a workout.
-
-**Headers Required:**
-```
-Authorization: Token <your_token>
-```
 
 ---
